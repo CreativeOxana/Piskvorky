@@ -34,22 +34,23 @@ a {
   width: 400px;
   margin: 150px auto;
   text-align: center;
-  align-items: center;
-  justify-content: center;
 }
 
 .container__content {
   flex-direction: column;
   background-color: #283e50;
   color: #fff;
-  align-items: center;
-  justify-content: center;
+  font-size: 18px;
 }
 
 .container__buttons {
+  display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100px;
   color: #fff;
+  font-size: 18px;
+  justify-content: center;
 }
 
 .container__buttons--rules {
