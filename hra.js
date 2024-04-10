@@ -1,24 +1,57 @@
 let currentPlayer = 'circle';
 
-const handleButtonClick = (event) => {
-  const button = event.target;
-  if (!button.disabled) {
-    button.classList.add(`board__field--${currentPlayer}`);
-    button.disabled = true;
-    currentPlayer = currentPlayer === 'circle' ? 'cross' : 'circle';
-    updatePlayerTurnDisplay();
+const handleClick = (event) => {
+  event.target.disabled = true;
+  if (currentPlayer === 'circle') {
+    event.target.classList.add('piskvorky__board--field--circle');
+    currentPlayer = 'cross';
+    document.querySelector('.player').src = 'images/cross-black.svg';
+  } else {
+    event.target.classList.add('piskvorky__board--field--cross');
+    currentPlayer = 'circle';
+    document.querySelector('.player').src = 'images/circle-black.svg';
   }
 };
 
-for (let i = 1; i <= 10; i++) {
-  const button = document.querySelector(`button:nth-child(${i})`);
-  button.addEventListener('click', handleButtonClick);
-}
+document
+  .querySelector('button:nth-child(1)')
+  .addEventListener('click', handleClick);
 
-const updatePlayerTurnDisplay = () => {
-  const playerTurnDisplay = document.querySelector('.player_turn');
-  playerTurnDisplay.textContent = `Na tahu je: ${currentPlayer}`;
-};
+document
+  .querySelector('button:nth-child(2)')
+  .addEventListener('click', handleClick);
+
+document
+  .querySelector('button:nth-child(3)')
+  .addEventListener('click', handleClick);
+
+document
+  .querySelector('button:nth-child(4)')
+  .addEventListener('click', handleClick);
+
+document
+  .querySelector('button:nth-child(5)')
+  .addEventListener('click', handleClick);
+
+document
+  .querySelector('button:nth-child(6)')
+  .addEventListener('click', handleClick);
+
+document
+  .querySelector('button:nth-child(7)')
+  .addEventListener('click', handleClick);
+
+document
+  .querySelector('button:nth-child(8)')
+  .addEventListener('click', handleClick);
+
+document
+  .querySelector('button:nth-child(9)')
+  .addEventListener('click', handleClick);
+
+document
+  .querySelector('button:nth-child(10)')
+  .addEventListener('click', handleClick);
 
 const restartButton = document.querySelector('.button__restart');
 restartButton.addEventListener('click', (e) => {
