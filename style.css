@@ -152,3 +152,12 @@ a {
 .piskvorky__board--field:focus {
   background-color: #fcfcfc;
 }
+
+.piskvorky__board--field--circle {
+  background-color: #ff7f50;
+  border-radius: 50%;
+}
+
+.piskvorky__board--field--cross {
+  background-color: #6495ed;
+}
