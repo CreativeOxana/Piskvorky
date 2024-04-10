@@ -151,13 +151,32 @@ a {
 .piskvorky__board--field:hover,
 .piskvorky__board--field:focus {
   background-color: #fcfcfc;
+  cursor: pointer;
 }
 
 .piskvorky__board--field--circle {
-  background-color: #ff7f50;
-  border-radius: 50%;
+  background-image: url('images/circle.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: growSymbol 0.15s forwards;
 }
 
 .piskvorky__board--field--cross {
-  background-color: #6495ed;
+  background-image: url('images/cross.png');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: growSymbol 0.15s forwards;
+
+}
+
+@keyframes growSymbol {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.3);
+  }
 }

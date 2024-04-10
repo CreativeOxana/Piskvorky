@@ -1,33 +1,31 @@
 let currentPlayer = 'circle';
 
-const buttons = document.querySelectorAll('.field');
-
-const addSymbol = (button) => {
-  if (currentPlayer === 'circle') {
-    currentPlayer = 'cross';
-  } else {
-    currentPlayer = 'circle';
+const handleButtonClick = (event) => {
+  const button = event.target;
+  if (!button.disabled) {
+    button.classList.add(`board__field--${currentPlayer}`);
+    button.disabled = true;
+    currentPlayer = currentPlayer === 'circle' ? 'cross' : 'circle';
+    updatePlayerTurnDisplay();
   }
-
-  button.disabled = true;
 };
 
-const updatePlayerInfo = () => {
-  const playerInfo = document.querySelector('.piskvorky__menu--icon');
+for (let i = 1; i <= 10; i++) {
+  const button = document.querySelector(`button:nth-child(${i})`);
+  button.addEventListener('click', handleButtonClick);
+}
 
-  let symbolP;
-
-  if (currentPlayer === 'circle') {
-    symbolP = 'Kolečko';
-  } else {
-    symbolP = 'Křížek';
-  }
-
-  playerInfo.textContent = 'Hraje: ' + symbolP;
+const updatePlayerTurnDisplay = () => {
+  const playerTurnDisplay = document.querySelector('.player_turn');
+  playerTurnDisplay.textContent = `Na tahu je: ${currentPlayer}`;
 };
 
-buttons.forEach((button) => {
-  button.addEventListener('click', addSymbol);
-
-  updatePlayerInfo();
+const restartButton = document.querySelector('.button__restart');
+restartButton.addEventListener('click', (e) => {
+  const confirmation = confirm('Opravdu chceš začít hrát znovu?');
+  if (!confirmation) {
+    e.preventDefault();
+  } else {
+    location.reload();
+  }
 });
