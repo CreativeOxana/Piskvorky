@@ -157,8 +157,7 @@ a {
 
 .piskvorky__board--field--circle {
   background-image: url('images/circle-black.svg');
-  background-color: linear-gradient(0deg, rgba(255, 200, 218, 1) 18%, rgba(97, 93, 173, 1) 66%);
-  ;
+  background-color: white;
   background-repeat: no-repeat;
   background-position: center;
   animation: growSymbol 0.15s forwards;
@@ -166,8 +165,7 @@ a {
 
 .piskvorky__board--field--cross {
   background-image: url('images/cross-black.svg');
-  background-color: linear-gradient(0deg, rgba(255, 200, 218, 1) 18%, rgba(97, 93, 173, 1) 66%);
-  ;
+  background-color: white;
   background-repeat: no-repeat;
   background-position: center;
   animation: growSymbol 0.15s forwards;
