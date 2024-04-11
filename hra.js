@@ -5,11 +5,11 @@ const handleClick = (event) => {
   if (currentPlayer === 'circle') {
     event.target.classList.add('piskvorky__board--field--circle');
     currentPlayer = 'cross';
-    document.querySelector('.player').src = 'images/cross-black.svg';
+    document.querySelector('.player').src = 'images/cross.svg';
   } else {
     event.target.classList.add('piskvorky__board--field--cross');
     currentPlayer = 'circle';
-    document.querySelector('.player').src = 'images/circle-black.svg';
+    document.querySelector('.player').src = 'images/circle.svg';
   }
 };
 

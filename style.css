@@ -108,7 +108,8 @@ a {
 }
 
 .piskvorky__menu--icon {
-  padding-left: 10px;
+  padding: 10px;
+  color: #fff;
 }
 
 .piskvorky__menu--buttons {
@@ -156,6 +157,8 @@ a {
 
 .piskvorky__board--field--circle {
   background-image: url('images/circle-black.svg');
+  background-color: linear-gradient(0deg, rgba(255, 200, 218, 1) 18%, rgba(97, 93, 173, 1) 66%);
+  ;
   background-repeat: no-repeat;
   background-position: center;
   animation: growSymbol 0.15s forwards;
@@ -163,6 +166,8 @@ a {
 
 .piskvorky__board--field--cross {
   background-image: url('images/cross-black.svg');
+  background-color: linear-gradient(0deg, rgba(255, 200, 218, 1) 18%, rgba(97, 93, 173, 1) 66%);
+  ;
   background-repeat: no-repeat;
   background-position: center;
   animation: growSymbol 0.15s forwards;
