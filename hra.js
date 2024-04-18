@@ -18,29 +18,29 @@ const handleClick = (event) => {
 
   const playBoardElm = Array.from(fields);
   const playBoard = playBoardElm.map((field) => {
-    if (field.classList.contains('piskvorky__square--circle')) {
+    if (field.classList.contains('piskvorky__board--field--circle')) {
       return 'o';
-    } else if (field.classList.contains('piskvorky__square--cross')) {
+    } else if (field.classList.contains('piskvorky__board--field--cross')) {
       return 'x';
     } else {
       return '_';
     }
   });
 
-  const findingWinner = () => {
-    const winner = findWinner(playBoard);
-    if (winner === 'o') {
-      alert(`Vyhrálo kolečko!`);
-      location.reload();
-    } else if (winner === 'x') {
-      alert('Vyhrál křížek!');
-      location.reload();
-    } else if (winner === 'tie') {
-      alert('Hra skončila nerozhodně!');
-      location.reload();
-    }
+  const winner = findWinner(playBoard);
+  const alertWinner = () => {
+    alert(`Vyhrál hráč se symbolem ${winner}`);
+    location.reload();
   };
-  setTimeout(findingWinner, 500);
+  const alertTie = () => {
+    alert('Hra skončila nerozhodně!');
+    location.reload();
+  };
+  if (winner === 'x' || winner === 'o') {
+    setTimeout(alertWinner, 300);
+  } else if (winner === 'tie') {
+    setTimeout(alertTie, 300);
+  }
 };
 
 const fields = document.querySelectorAll('.piskvorky__board--field');
