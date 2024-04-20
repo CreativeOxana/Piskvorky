@@ -140,6 +140,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   opacity: 0.5;
+  border: 5px solid blueviolet;
 }
 
 .piskvorky__board--field {
@@ -158,6 +159,7 @@ a {
 .piskvorky__board--field--circle {
   background-image: url('images/circle-black.svg');
   background-color: white;
+  opacity: 0.75;
   background-repeat: no-repeat;
   background-position: center;
   animation: growSymbol 0.15s forwards;
@@ -166,6 +168,7 @@ a {
 .piskvorky__board--field--cross {
   background-image: url('images/cross-black.svg');
   background-color: white;
+  opacity: 0.75;
   background-repeat: no-repeat;
   background-position: center;
   animation: growSymbol 0.15s forwards;
