@@ -64,6 +64,7 @@ const handleClick = async (event) => {
     document.querySelector('.player').alt = 'křížek';
     makingMove();
     checkGameStatus();
+    handleAITurn();
   } else if (currentPlayer == 'cross') {
     event.target.classList.add('piskvorky__board--field--cross');
     currentPlayer = 'circle';
@@ -71,7 +72,6 @@ const handleClick = async (event) => {
     document.querySelector('.player').alt = 'kolečko';
     makingMove();
     checkGameStatus();
-    handleAITurn();
   }
 };
 
